@@ -1,6 +1,9 @@
-@mixin text-hover($hover-color) {
+@mixin text-hover($hover-color, $underline: false) {
   transition: color 0.3s;
   &:hover {
     color: $hover-color;
+    @if $underline {
+      text-decoration: underline;
+    }
   }
 }

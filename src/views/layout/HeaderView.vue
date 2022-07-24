@@ -59,7 +59,7 @@ function navLink(nav: Nav) {
   height: $header-height;
   padding: $header-padding;
   background-color: $header-bg-color;
-  border-bottom: 1px solid map-get($map: $border-color, $key: "");
+  border-bottom: $border-default;
   min-width: $min-width;
   display: flex;
   align-items: center;

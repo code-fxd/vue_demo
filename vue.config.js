@@ -14,6 +14,7 @@ module.exports = defineConfig({
       Components({
         resolvers: [ElementPlusResolver()],
       }),
+      require("unplugin-element-plus/webpack")(),
     ],
   },
   chainWebpack: (config) => {
@@ -28,5 +29,8 @@ module.exports = defineConfig({
           patterns: [path.resolve(__dirname, "./src/styles/main.scss")],
         });
     });
+  },
+  devServer: {
+    proxy: "http://127.0.0.1:3000",
   },
 });

@@ -52,6 +52,11 @@ $text-color: map.merge(
   $text-color
 );
 
+$text-color-secondary: map-get(
+  $map: $text-color,
+  $key: secondary,
+);
+
 // Border
 $border-color: () !default;
 $border-color: map.merge(
@@ -80,15 +85,25 @@ $border-radius: map.merge(
 $border-width: 1px !default;
 $border-style: solid !default;
 
+$border-default: $border-width $border-style
+  map-get(
+    $map: $border-color,
+    $key: "",
+  );
 // Background
 $bg-color: () !default;
 $bg-color: map.merge(
   (
     "": #ffffff,
     "page": #f2f3f5,
-    "overlay": #ffffff,
+    "overlay": #fafafa,
   ),
   $bg-color
+);
+
+$bg-color-overlay: map-get(
+  $map: $bg-color,
+  $key: overlay,
 );
 
 // Box-shadow
@@ -200,3 +215,22 @@ $font-size: map.merge(
   ),
   $font-size
 );
+
+// 一级标题
+$font-size-title-1: 24px;
+// 二级标题 文章标题
+$font-size-title-2: 18px;
+
+$margin-xxs: 4px;
+$margin-xs: 8px;
+$margin-s: 12px;
+$margin-m: 16px;
+$margin-xl: 24px;
+$margin-xxl: 56px;
+
+$padding-xxs: 4px;
+$padding-xs: 8px;
+$padding-s: 12px;
+$padding-m: 16px;
+$padding-xl: 20px;
+$padding-xxl: 24px;
